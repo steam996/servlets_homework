@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.stream.Collectors;
 
 // Stub
 public class PostRepository {
@@ -18,18 +19,12 @@ public class PostRepository {
     if (postMap.isEmpty()){
       return Collections.emptyList();
     }
-    List <Post> postList = new ArrayList<>();
-    for (long key: postMap.keySet()) {
-      postList.add(postMap.get(key));
-    }
+    List <Post> postList = postMap.values().stream().collect(Collectors.toList());
     return postList;
   }
 
   public Optional<Post> getById(long id) {
-    if (!postMap.containsKey(id)){
-      throw new NotFoundException();
-    }
-    return Optional.of(postMap.get(id));
+    return Optional.ofNullable(postMap.get(id));
   }
 
   public Post save(Post post) {

@@ -10,11 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11a82062-f1a7-43db-92ea-8aa99aa6f117" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/servlets_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/servlets_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servlets/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/servlets/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servlets/servlets.iml" beforeDir="false" afterPath="$PROJECT_DIR$/servlets/servlets.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servlets/src/main/java/ru/netology/repository/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/servlets/src/main/java/ru/netology/repository/PostRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servlets/src/main/java/ru/netology/servlet/MainServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/servlets/src/main/java/ru/netology/servlet/MainServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,6 +156,7 @@
       <workItem from="1675375641518" duration="3266000" />
       <workItem from="1675455593568" duration="5836000" />
       <workItem from="1675461465497" duration="1036000" />
+      <workItem from="1677097771920" duration="390000" />
     </task>
     <servers />
   </component>

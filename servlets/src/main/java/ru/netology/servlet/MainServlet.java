@@ -1,6 +1,7 @@
 package ru.netology.servlet;
 
 import ru.netology.controller.PostController;
+import ru.netology.exception.NotFoundException;
 import ru.netology.repository.PostRepository;
 import ru.netology.service.PostService;
 
@@ -61,15 +62,23 @@ public class MainServlet extends HttpServlet {
     }
 
     private void deletePost(String path, HttpServletResponse resp) {
-        final var id = parseId(path);
-        System.out.println(id);
-        controller.removeById(id, resp);
+        try{
+            final var id = parseId(path);
+            controller.removeById(id, resp);
+        } catch (NotFoundException e){
+            resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+        }
+
     }
 
     private void getPost(String path, HttpServletResponse resp) throws IOException {
-        final var id = parseId(path);
-        controller.getById(id, resp);
-        return;
+        try{
+            final var id = parseId(path);
+            controller.getById(id, resp);
+            return;
+        } catch (NotFoundException e){
+            resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+        }
     }
 }
 
