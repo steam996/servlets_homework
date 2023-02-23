@@ -62,7 +62,7 @@ public class MainServlet extends HttpServlet {
     }
 
     private void deletePost(String path, HttpServletResponse resp) {
-        try {
+        try{
             final var id = parseId(path);
             controller.removeById(id, resp);
         } catch (NotFoundException e){
@@ -72,9 +72,10 @@ public class MainServlet extends HttpServlet {
     }
 
     private void getPost(String path, HttpServletResponse resp) throws IOException {
-        try {
+        try{
             final var id = parseId(path);
             controller.getById(id, resp);
+            return;
         } catch (NotFoundException e){
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
         }
