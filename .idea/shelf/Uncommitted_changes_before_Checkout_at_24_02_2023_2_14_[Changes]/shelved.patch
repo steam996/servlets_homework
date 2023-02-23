@@ -1,0 +1,746 @@
+Index: servlets/src/main/java/ru/netology/exception/NotFoundException.java
+===================================================================
+diff --git a/servlets/src/main/java/ru/netology/exception/NotFoundException.java b/servlets/src/main/java/ru/netology/exception/NotFoundException.java
+deleted file mode 100644
+--- a/servlets/src/main/java/ru/netology/exception/NotFoundException.java	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
++++ /dev/null	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
+@@ -1,22 +0,0 @@
+-package ru.netology.exception;
+-
+-public class NotFoundException extends RuntimeException {
+-  public NotFoundException() {
+-  }
+-
+-  public NotFoundException(String message) {
+-    super(message);
+-  }
+-
+-  public NotFoundException(String message, Throwable cause) {
+-    super(message, cause);
+-  }
+-
+-  public NotFoundException(Throwable cause) {
+-    super(cause);
+-  }
+-
+-  public NotFoundException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+-    super(message, cause, enableSuppression, writableStackTrace);
+-  }
+-}
+Index: .idea/.gitignore
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+deleted file mode 100644
+--- a/.idea/.gitignore	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
++++ /dev/null	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
+@@ -1,47 +0,0 @@
+-HELP.md
+-.gradle
+-build/
+-
+-### STS ###
+-.apt_generated
+-.classpath
+-.factorypath
+-.project
+-.settings
+-.springBeans
+-.sts4-cache
+-
+-### IntelliJ IDEA ###
+-.idea
+-*.iws
+-*.iml
+-*.ipr
+-out/
+-
+-### Android Studio ###
+-local.properties
+-captures/
+-.externalNativeBuild
+-.cxx
+-
+-### NetBeans ###
+-/nbproject/private/
+-/nbbuild/
+-/dist/
+-/nbdist/
+-/.nb-gradle/
+-
+-### VS Code ###
+-.vscode/
+-
+-### Package Files ###
+-*.jar
+-*.war
+-*.nar
+-*.ear
+-*.zip
+-*.tar.gz
+-*.rar
+-
+-### Gradle ###
+-!gradle/wrapper/gradle-wrapper.jar
+\ No newline at end of file
+Index: .idea/libraries/Maven__com_google_code_gson_gson_2_10_1.xml
+===================================================================
+diff --git a/.idea/libraries/Maven__com_google_code_gson_gson_2_10_1.xml b/.idea/libraries/Maven__com_google_code_gson_gson_2_10_1.xml
+deleted file mode 100644
+--- a/.idea/libraries/Maven__com_google_code_gson_gson_2_10_1.xml	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
++++ /dev/null	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
+@@ -1,13 +0,0 @@
+-<component name="libraryTable">
+-  <library name="Maven: com.google.code.gson:gson:2.10.1">
+-    <CLASSES>
+-      <root url="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar!/" />
+-    </CLASSES>
+-    <JAVADOC>
+-      <root url="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.10.1/gson-2.10.1-javadoc.jar!/" />
+-    </JAVADOC>
+-    <SOURCES>
+-      <root url="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.10.1/gson-2.10.1-sources.jar!/" />
+-    </SOURCES>
+-  </library>
+-</component>
+\ No newline at end of file
+Index: servlets/src/main/java/ru/netology/model/Post.java
+===================================================================
+diff --git a/servlets/src/main/java/ru/netology/model/Post.java b/servlets/src/main/java/ru/netology/model/Post.java
+deleted file mode 100644
+--- a/servlets/src/main/java/ru/netology/model/Post.java	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
++++ /dev/null	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
+@@ -1,30 +0,0 @@
+-package ru.netology.model;
+-
+-public class Post {
+-  private long id;
+-  private String content;
+-
+-  public Post() {
+-  }
+-
+-  public Post(long id, String content) {
+-    this.id = id;
+-    this.content = content;
+-  }
+-
+-  public long getId() {
+-    return id;
+-  }
+-
+-  public void setId(long id) {
+-    this.id = id;
+-  }
+-
+-  public String getContent() {
+-    return content;
+-  }
+-
+-  public void setContent(String content) {
+-    this.content = content;
+-  }
+-}
+Index: .idea/modules.xml
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+deleted file mode 100644
+--- a/.idea/modules.xml	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
++++ /dev/null	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
+@@ -1,9 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ProjectModuleManager">
+-    <modules>
+-      <module fileurl="file://$PROJECT_DIR$/.idea/04_serlvets.iml" filepath="$PROJECT_DIR$/.idea/04_serlvets.iml" />
+-      <module fileurl="file://$PROJECT_DIR$/servlets/servlets.iml" filepath="$PROJECT_DIR$/servlets/servlets.iml" />
+-    </modules>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: servlets/src/main/java/ru/netology/repository/PostRepository.java
+===================================================================
+diff --git a/servlets/src/main/java/ru/netology/repository/PostRepository.java b/servlets/src/main/java/ru/netology/repository/PostRepository.java
+deleted file mode 100644
+--- a/servlets/src/main/java/ru/netology/repository/PostRepository.java	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
++++ /dev/null	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
+@@ -1,48 +0,0 @@
+-package ru.netology.repository;
+-
+-import org.springframework.stereotype.Repository;
+-import ru.netology.exception.NotFoundException;
+-import ru.netology.model.Post;
+-
+-import java.util.ArrayList;
+-import java.util.Collections;
+-import java.util.List;
+-import java.util.Optional;
+-import java.util.concurrent.ConcurrentHashMap;
+-import java.util.concurrent.atomic.AtomicLong;
+-import java.util.stream.Collectors;
+-
+-// Stub
+-@Repository
+-public class PostRepository {
+-  private ConcurrentHashMap <Long, Post> postMap = new ConcurrentHashMap();
+-  private AtomicLong id = new AtomicLong();
+-  public List<Post> all() {
+-    if (postMap.isEmpty()){
+-      return Collections.emptyList();
+-    }
+-    List <Post> postList = postMap.values().stream().collect(Collectors.toList());
+-    return postList;
+-  }
+-
+-  public Optional<Post> getById(long id) {
+-    return Optional.ofNullable(postMap.get(id));
+-  }
+-
+-  public Post save(Post post) {
+-    if (!postMap.containsKey(post.getId()) && post.getId() != 0){
+-      throw new NotFoundException();
+-    }
+-    if (post.getId() == 0){
+-      post.setId(id.incrementAndGet());
+-    }
+-    postMap.put(post.getId(), post);
+-    return post;
+-  }
+-
+-  public void removeById(long id) {
+-    if (!postMap.containsKey(id))
+-      throw new NotFoundException();
+-    postMap.remove(id);
+-  }
+-}
+Index: servlets/pom.xml
+===================================================================
+diff --git a/servlets/pom.xml b/servlets/pom.xml
+deleted file mode 100644
+--- a/servlets/pom.xml	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
++++ /dev/null	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
+@@ -1,73 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project xmlns="http://maven.apache.org/POM/4.0.0"
+-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+-    <modelVersion>4.0.0</modelVersion>
+-
+-    <groupId>ru.netology</groupId>
+-    <artifactId>servlets</artifactId>
+-    <version>1.0-SNAPSHOT</version>
+-    <packaging>war</packaging>
+-
+-    <properties>
+-        <maven.compiler.source>11</maven.compiler.source>
+-        <maven.compiler.target>11</maven.compiler.target>
+-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+-        <webapp-runner.version>9.0.69.1</webapp-runner.version>
+-    </properties>
+-
+-    <dependencies>
+-        <dependency>
+-            <groupId>javax.servlet</groupId>
+-            <artifactId>javax.servlet-api</artifactId>
+-            <version>4.0.1</version>
+-            <scope>provided</scope>
+-        </dependency>
+-        <dependency>
+-            <groupId>org.springframework</groupId>
+-            <artifactId>spring-context</artifactId>
+-            <version>5.2.9.RELEASE</version>
+-        </dependency>
+-        <dependency>
+-            <groupId>com.google.code.gson</groupId>
+-            <artifactId>gson</artifactId>
+-            <version>2.10.1</version>
+-            <scope>compile</scope>
+-        </dependency>
+-    </dependencies>
+-
+-    <build>
+-        <plugins>
+-            <plugin>
+-                <groupId>org.apache.maven.plugins</groupId>
+-                <artifactId>maven-dependency-plugin</artifactId>
+-                <version>3.3.0</version>
+-                <executions>
+-                    <execution>
+-                        <phase>package</phase>
+-                        <goals>
+-                            <goal>copy</goal>
+-                        </goals>
+-                        <configuration>
+-                            <artifactItems>
+-                                <artifactItem>
+-                                    <groupId>com.heroku</groupId>
+-                                    <artifactId>webapp-runner</artifactId>
+-                                    <version>${webapp-runner.version}</version>
+-                                    <destFileName>webapp-runner.jar</destFileName>
+-                                </artifactItem>
+-                            </artifactItems>
+-                        </configuration>
+-                    </execution>
+-                </executions>
+-            </plugin>
+-        </plugins>
+-    </build>
+-
+-
+-
+-
+-
+-
+-
+-</project>
+\ No newline at end of file
+Index: servlets/src/main/java/ru/netology/service/PostService.java
+===================================================================
+diff --git a/servlets/src/main/java/ru/netology/service/PostService.java b/servlets/src/main/java/ru/netology/service/PostService.java
+deleted file mode 100644
+--- a/servlets/src/main/java/ru/netology/service/PostService.java	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
++++ /dev/null	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
+@@ -1,33 +0,0 @@
+-package ru.netology.service;
+-
+-import org.springframework.stereotype.Service;
+-import ru.netology.exception.NotFoundException;
+-import ru.netology.model.Post;
+-import ru.netology.repository.PostRepository;
+-
+-import java.util.List;
+-
+-@Service
+-public class PostService {
+-  private final PostRepository repository;
+-  public PostService(PostRepository repository) {
+-    this.repository = repository;
+-  }
+-
+-  public List<Post> all() {
+-    return repository.all();
+-  }
+-
+-  public Post getById(long id) {
+-    return repository.getById(id).orElseThrow(NotFoundException::new);
+-  }
+-
+-  public Post save(Post post) {
+-    return repository.save(post);
+-  }
+-
+-  public void removeById(long id) {
+-    repository.removeById(id);
+-  }
+-}
+-
+Index: servlets/src/main/java/ru/netology/controller/PostController.java
+===================================================================
+diff --git a/servlets/src/main/java/ru/netology/controller/PostController.java b/servlets/src/main/java/ru/netology/controller/PostController.java
+deleted file mode 100644
+--- a/servlets/src/main/java/ru/netology/controller/PostController.java	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
++++ /dev/null	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
+@@ -1,50 +0,0 @@
+-package ru.netology.controller;
+-
+-import com.google.gson.Gson;
+-import org.springframework.stereotype.Controller;
+-import ru.netology.model.Post;
+-import ru.netology.service.PostService;
+-
+-import javax.servlet.http.HttpServletResponse;
+-import java.io.IOException;
+-import java.io.Reader;
+-
+-@Controller
+-public class PostController {
+-  public static final String APPLICATION_JSON = "application/json";
+-  private final PostService service;
+-
+-  public PostController(PostService service) {
+-    this.service = service;
+-  }
+-
+-  public void all(HttpServletResponse response) throws IOException {
+-    response.setContentType(APPLICATION_JSON);
+-    final var data = service.all();
+-    final var gson = new Gson();
+-    response.getWriter().print(gson.toJson(data));
+-  }
+-
+-  public void getById(long id, HttpServletResponse response) throws IOException {
+-    // TODO: deserialize request & serialize response
+-    response.setContentType(APPLICATION_JSON);
+-    final var post =service.getById(id);
+-    final var gson = new Gson();
+-    response.getWriter().print(gson.toJson(post));
+-
+-  }
+-
+-  public void save(Reader body, HttpServletResponse response) throws IOException {
+-    response.setContentType(APPLICATION_JSON);
+-    final var gson = new Gson();
+-    final var post = gson.fromJson(body, Post.class);
+-    final var data = service.save(post);
+-    response.getWriter().print(gson.toJson(data));
+-  }
+-
+-  public void removeById(long id, HttpServletResponse response) {
+-    // TODO: deserialize request & serialize response
+-    service.removeById(id);
+-    response.setStatus(HttpServletResponse.SC_NO_CONTENT);
+-  }
+-}
+Index: .idea/libraries/Maven__javax_servlet_javax_servlet_api_4_0_1.xml
+===================================================================
+diff --git a/.idea/libraries/Maven__javax_servlet_javax_servlet_api_4_0_1.xml b/.idea/libraries/Maven__javax_servlet_javax_servlet_api_4_0_1.xml
+deleted file mode 100644
+--- a/.idea/libraries/Maven__javax_servlet_javax_servlet_api_4_0_1.xml	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
++++ /dev/null	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
+@@ -1,13 +0,0 @@
+-<component name="libraryTable">
+-  <library name="Maven: javax.servlet:javax.servlet-api:4.0.1">
+-    <CLASSES>
+-      <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/javax.servlet-api/4.0.1/javax.servlet-api-4.0.1.jar!/" />
+-    </CLASSES>
+-    <JAVADOC>
+-      <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/javax.servlet-api/4.0.1/javax.servlet-api-4.0.1-javadoc.jar!/" />
+-    </JAVADOC>
+-    <SOURCES>
+-      <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/javax.servlet-api/4.0.1/javax.servlet-api-4.0.1-sources.jar!/" />
+-    </SOURCES>
+-  </library>
+-</component>
+\ No newline at end of file
+Index: servlets/src/test/request.http
+===================================================================
+diff --git a/servlets/src/test/request.http b/servlets/src/test/request.http
+deleted file mode 100644
+--- a/servlets/src/test/request.http	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
++++ /dev/null	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
+@@ -1,11 +0,0 @@
+-GET http://localhost:8080/api/posts
+-
+-###
+-
+-POST http://localhost:8080/api/posts
+-Content-Type: application/json
+-
+-{
+-  "id": 0,
+-  "content": "Last Post"
+-}
+Index: servlets/servlets.iml
+===================================================================
+diff --git a/servlets/servlets.iml b/servlets/servlets.iml
+deleted file mode 100644
+--- a/servlets/servlets.iml	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
++++ /dev/null	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
+@@ -1,36 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+-  <component name="FacetManager">
+-    <facet type="web" name="Web">
+-      <configuration>
+-        <descriptors>
+-          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/src/main/webapp/WEB-INF/web.xml" />
+-        </descriptors>
+-        <webroots>
+-          <root url="file://$MODULE_DIR$/src/main/webapp" relative="/" />
+-        </webroots>
+-      </configuration>
+-    </facet>
+-    <facet type="Spring" name="Spring">
+-      <configuration />
+-    </facet>
+-  </component>
+-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_11">
+-    <output url="file://$MODULE_DIR$/target/classes" />
+-    <output-test url="file://$MODULE_DIR$/target/test-classes" />
+-    <content url="file://$MODULE_DIR$">
+-      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+-      <excludeFolder url="file://$MODULE_DIR$/target" />
+-    </content>
+-    <orderEntry type="inheritedJdk" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-    <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:javax.servlet-api:4.0.1" level="project" />
+-    <orderEntry type="library" name="Maven: org.springframework:spring-context:5.2.9.RELEASE" level="project" />
+-    <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.2.9.RELEASE" level="project" />
+-    <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.2.9.RELEASE" level="project" />
+-    <orderEntry type="library" name="Maven: org.springframework:spring-core:5.2.9.RELEASE" level="project" />
+-    <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.2.9.RELEASE" level="project" />
+-    <orderEntry type="library" name="Maven: org.springframework:spring-expression:5.2.9.RELEASE" level="project" />
+-    <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.10.1" level="project" />
+-  </component>
+-</module>
+\ No newline at end of file
+Index: servlets/src/main/java/ru/netology/servlet/MainServlet.java
+===================================================================
+diff --git a/servlets/src/main/java/ru/netology/servlet/MainServlet.java b/servlets/src/main/java/ru/netology/servlet/MainServlet.java
+deleted file mode 100644
+--- a/servlets/src/main/java/ru/netology/servlet/MainServlet.java	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
++++ /dev/null	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
+@@ -1,83 +0,0 @@
+-package ru.netology.servlet;
+-
+-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+-import ru.netology.controller.PostController;
+-import ru.netology.exception.NotFoundException;
+-import ru.netology.repository.PostRepository;
+-import ru.netology.service.PostService;
+-
+-import javax.servlet.http.HttpServlet;
+-import javax.servlet.http.HttpServletRequest;
+-import javax.servlet.http.HttpServletResponse;
+-import java.io.IOException;
+-
+-public class MainServlet  extends  HttpServlet{
+-    AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("ru.netology");
+-
+-    private PostController controller;
+-    @Override
+-    public void init() {
+-        controller = context.getBean("postController", PostController.class);
+-    }
+-
+-    protected void service(HttpServletRequest req, HttpServletResponse resp) {
+-
+-        try {
+-            final var path = req.getRequestURI();
+-            final var method = req.getMethod();
+-            // primitive routing
+-
+-            if (method.equals("GET") && path.equals("/api/posts")) {
+-                controller.all(resp);
+-                return;
+-            }
+-
+-            if (method.equals("GET") && path.matches("/api/posts/\\d+")) {
+-                // easy way
+-                getPost(path, resp);
+-                return;
+-            }
+-
+-            if (method.equals("POST") && path.equals("/api/posts")) {
+-                controller.save(req.getReader(), resp);
+-                return;
+-            }
+-
+-            if (method.equals("DELETE") && path.matches("/api/posts/\\d+")) {
+-                // easy way
+-                deletePost(path, resp);
+-                return;
+-            }
+-            resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+-        } catch (Exception e) {
+-            e.printStackTrace();
+-            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+-        }
+-    }
+-
+-    private long parseId(String path) {
+-        final var id = Long.parseLong(path.substring(path.lastIndexOf("/") + 1));
+-        return id;
+-    }
+-
+-    private void deletePost(String path, HttpServletResponse resp) {
+-        try{
+-            final var id = parseId(path);
+-            controller.removeById(id, resp);
+-        } catch (NotFoundException e){
+-            resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+-        }
+-
+-    }
+-
+-    private void getPost(String path, HttpServletResponse resp) throws IOException {
+-        try{
+-            final var id = parseId(path);
+-            controller.getById(id, resp);
+-            return;
+-        } catch (NotFoundException e){
+-            resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+-        }
+-    }
+-}
+-
+Index: .idea/artifacts/servlets_war.xml
+===================================================================
+diff --git a/.idea/artifacts/servlets_war.xml b/.idea/artifacts/servlets_war.xml
+deleted file mode 100644
+--- a/.idea/artifacts/servlets_war.xml	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
++++ /dev/null	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
+@@ -1,14 +0,0 @@
+-<component name="ArtifactManager">
+-  <artifact type="war" name="servlets:war">
+-    <output-path>$PROJECT_DIR$/servlets/target</output-path>
+-    <properties id="maven-jee-properties">
+-      <options>
+-        <module>servlets</module>
+-        <packaging>war</packaging>
+-      </options>
+-    </properties>
+-    <root id="archive" name="servlets-1.0-SNAPSHOT.war">
+-      <element id="artifact" artifact-name="servlets:war exploded" />
+-    </root>
+-  </artifact>
+-</component>
+\ No newline at end of file
+Index: servlets/src/main/webapp/WEB-INF/web.xml
+===================================================================
+diff --git a/servlets/src/main/webapp/WEB-INF/web.xml b/servlets/src/main/webapp/WEB-INF/web.xml
+deleted file mode 100644
+--- a/servlets/src/main/webapp/WEB-INF/web.xml	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
++++ /dev/null	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
+@@ -1,20 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+-         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+-         version="4.0">
+-    <response-character-encoding>UTF-8</response-character-encoding>
+-    <!-- определение servlet'а -->
+-    <servlet>
+-        <servlet-name>main</servlet-name>
+-        <servlet-class>ru.netology.servlet.MainServlet</servlet-class>
+-        <load-on-startup>1</load-on-startup>
+-    </servlet>
+-
+-    <!-- mapping - привязка к определённому URL-->
+-    <servlet-mapping>
+-        <servlet-name>main</servlet-name>
+-        <url-pattern>/</url-pattern>
+-    </servlet-mapping>
+-</web-app>
+-
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"FrameworkDetectionExcludesConfiguration\">\r\n    <file type=\"web\" url=\"file://$PROJECT_DIR$/servlets\" />\r\n  </component>\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/servlets/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"semeru-11\" project-jdk-type=\"JavaSDK\" />\r\n  <component name=\"SwUserDefinedSpecifications\">\r\n    <option name=\"specTypeByUrl\">\r\n      <map />\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
++++ b/.idea/misc.xml	(date 1677193944918)
+@@ -1,19 +1,15 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="ExternalStorageConfigurationManager" enabled="true" />
+   <component name="FrameworkDetectionExcludesConfiguration">
+-    <file type="web" url="file://$PROJECT_DIR$/servlets" />
++    <file type="web" url="file://$PROJECT_DIR$" />
+   </component>
+   <component name="MavenProjectsManager">
+     <option name="originalFiles">
+       <list>
+-        <option value="$PROJECT_DIR$/servlets/pom.xml" />
++        <option value="$PROJECT_DIR$/pom.xml" />
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" project-jdk-name="semeru-11" project-jdk-type="JavaSDK" />
+-  <component name="SwUserDefinedSpecifications">
+-    <option name="specTypeByUrl">
+-      <map />
+-    </option>
+-  </component>
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" default="true" project-jdk-name="18" project-jdk-type="JavaSDK" />
+ </project>
+\ No newline at end of file
+Index: .idea/encodings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"Encoding\">\r\n    <file url=\"file://$PROJECT_DIR$/servlets/src/main/java\" charset=\"UTF-8\" />\r\n    <file url=\"file://$PROJECT_DIR$/servlets/src/main/resources\" charset=\"UTF-8\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/encodings.xml b/.idea/encodings.xml
+--- a/.idea/encodings.xml	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
++++ b/.idea/encodings.xml	(date 1677193994601)
+@@ -1,7 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="Encoding">
+-    <file url="file://$PROJECT_DIR$/servlets/src/main/java" charset="UTF-8" />
+-    <file url="file://$PROJECT_DIR$/servlets/src/main/resources" charset="UTF-8" />
++    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
++    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"VcsDirectoryMappings\">\r\n    <mapping directory=\"$PROJECT_DIR$\" vcs=\"Git\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+--- a/.idea/vcs.xml	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
++++ b/.idea/vcs.xml	(date 1677193944968)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="VcsDirectoryMappings">
+-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++    <mapping directory="" vcs="Git" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/artifacts/servlets_war_exploded.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"ArtifactManager\">\r\n  <artifact type=\"exploded-war\" name=\"servlets:war exploded\">\r\n    <output-path>$PROJECT_DIR$/servlets/target/servlets-1.0-SNAPSHOT</output-path>\r\n    <properties id=\"maven-jee-properties\">\r\n      <options>\r\n        <exploded>true</exploded>\r\n        <module>servlets</module>\r\n        <packaging>war</packaging>\r\n      </options>\r\n    </properties>\r\n    <root id=\"root\">\r\n      <element id=\"directory\" name=\"WEB-INF\">\r\n        <element id=\"directory\" name=\"classes\">\r\n          <element id=\"module-output\" name=\"servlets\" />\r\n        </element>\r\n        <element id=\"directory\" name=\"lib\">\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.springframework:spring-context:5.2.9.RELEASE\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.springframework:spring-aop:5.2.9.RELEASE\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.springframework:spring-beans:5.2.9.RELEASE\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.springframework:spring-core:5.2.9.RELEASE\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.springframework:spring-jcl:5.2.9.RELEASE\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.springframework:spring-expression:5.2.9.RELEASE\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: com.google.code.gson:gson:2.10.1\" />\r\n        </element>\r\n      </element>\r\n      <element id=\"directory\" name=\"META-INF\">\r\n        <element id=\"file-copy\" path=\"$PROJECT_DIR$/servlets/target/servlets-1.0-SNAPSHOT/META-INF/MANIFEST.MF\" />\r\n      </element>\r\n      <element id=\"javaee-facet-resources\" facet=\"servlets/web/Web\" />\r\n    </root>\r\n  </artifact>\r\n</component>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/artifacts/servlets_war_exploded.xml b/.idea/artifacts/servlets_war_exploded.xml
+--- a/.idea/artifacts/servlets_war_exploded.xml	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
++++ b/.idea/artifacts/servlets_war_exploded.xml	(date 1677193994568)
+@@ -1,6 +1,6 @@
+ <component name="ArtifactManager">
+   <artifact type="exploded-war" name="servlets:war exploded">
+-    <output-path>$PROJECT_DIR$/servlets/target/servlets-1.0-SNAPSHOT</output-path>
++    <output-path>$PROJECT_DIR$/target/servlets-1.0-SNAPSHOT</output-path>
+     <properties id="maven-jee-properties">
+       <options>
+         <exploded>true</exploded>
+@@ -14,17 +14,11 @@
+           <element id="module-output" name="servlets" />
+         </element>
+         <element id="directory" name="lib">
+-          <element id="library" level="project" name="Maven: org.springframework:spring-context:5.2.9.RELEASE" />
+-          <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.2.9.RELEASE" />
+-          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.2.9.RELEASE" />
+-          <element id="library" level="project" name="Maven: org.springframework:spring-core:5.2.9.RELEASE" />
+-          <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.2.9.RELEASE" />
+-          <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.2.9.RELEASE" />
+           <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.10.1" />
+         </element>
+       </element>
+       <element id="directory" name="META-INF">
+-        <element id="file-copy" path="$PROJECT_DIR$/servlets/target/servlets-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
++        <element id="file-copy" path="$PROJECT_DIR$/target/servlets-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+       </element>
+       <element id="javaee-facet-resources" facet="servlets/web/Web" />
+     </root>
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"CompilerConfiguration\">\r\n    <annotationProcessing>\r\n      <profile name=\"Maven default annotation processors profile\" enabled=\"true\">\r\n        <sourceOutputDir name=\"target/generated-sources/annotations\" />\r\n        <sourceTestOutputDir name=\"target/generated-test-sources/test-annotations\" />\r\n        <outputRelativeToContentRoot value=\"true\" />\r\n        <module name=\"servlets\" />\r\n      </profile>\r\n    </annotationProcessing>\r\n    <bytecodeTargetLevel>\r\n      <module name=\"servlets\" target=\"11\" />\r\n    </bytecodeTargetLevel>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+--- a/.idea/compiler.xml	(revision 4e46108b14ccb20924663f34ce53411d680d3ac9)
++++ b/.idea/compiler.xml	(date 1677193994586)
+@@ -9,8 +9,5 @@
+         <module name="servlets" />
+       </profile>
+     </annotationProcessing>
+-    <bytecodeTargetLevel>
+-      <module name="servlets" target="11" />
+-    </bytecodeTargetLevel>
+   </component>
+ </project>
+\ No newline at end of file

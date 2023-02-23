@@ -10,22 +10,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11a82062-f1a7-43db-92ea-8aa99aa6f117" name="Changes" comment="&quot;Добавлены стримы&quot;">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/servlets_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/servlets_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servlets/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/servlets/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servlets/servlets.iml" beforeDir="false" afterPath="$PROJECT_DIR$/servlets/servlets.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servlets/src/main/java/ru/netology/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/servlets/src/main/java/ru/netology/controller/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servlets/src/main/java/ru/netology/repository/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/servlets/src/main/java/ru/netology/repository/PostRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servlets/src/main/java/ru/netology/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/servlets/src/main/java/ru/netology/service/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servlets/src/main/java/ru/netology/servlet/MainServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/servlets/src/main/java/ru/netology/servlet/MainServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servlets/target/classes/ru/netology/controller/PostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/servlets/target/classes/ru/netology/controller/PostController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servlets/target/classes/ru/netology/repository/PostRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/servlets/target/classes/ru/netology/repository/PostRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servlets/target/classes/ru/netology/service/PostService.class" beforeDir="false" afterPath="$PROJECT_DIR$/servlets/target/classes/ru/netology/service/PostService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servlets/target/classes/ru/netology/servlet/MainServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/servlets/target/classes/ru/netology/servlet/MainServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servlets/target/servlets-1.0-SNAPSHOT/WEB-INF/classes/ru/netology/controller/PostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/servlets/target/servlets-1.0-SNAPSHOT/WEB-INF/classes/ru/netology/controller/PostController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servlets/target/servlets-1.0-SNAPSHOT/WEB-INF/classes/ru/netology/repository/PostRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/servlets/target/servlets-1.0-SNAPSHOT/WEB-INF/classes/ru/netology/repository/PostRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servlets/target/servlets-1.0-SNAPSHOT/WEB-INF/classes/ru/netology/service/PostService.class" beforeDir="false" afterPath="$PROJECT_DIR$/servlets/target/servlets-1.0-SNAPSHOT/WEB-INF/classes/ru/netology/service/PostService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servlets/target/servlets-1.0-SNAPSHOT/WEB-INF/classes/ru/netology/servlet/MainServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/servlets/target/servlets-1.0-SNAPSHOT/WEB-INF/classes/ru/netology/servlet/MainServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servlets.iml" beforeDir="false" afterPath="$PROJECT_DIR$/servlets.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servlets/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servlets/servlets.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servlets/src/main/java/ru/netology/controller/PostController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servlets/src/main/java/ru/netology/exception/NotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servlets/src/main/java/ru/netology/model/Post.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servlets/src/main/java/ru/netology/repository/PostRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servlets/src/main/java/ru/netology/service/PostService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servlets/src/main/java/ru/netology/servlet/MainServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servlets/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servlets/src/test/request.http" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/netology/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/netology/controller/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/netology/repository/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/netology/repository/PostRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/netology/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/netology/service/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/netology/servlet/MainServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/netology/servlet/MainServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,16 +66,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Professional/Desktop/PJ/Training/04_serlvets",
-    "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "43468e1058ee6e0d280a45d493ceb014"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Professional/Desktop/PJ/Training/04_serlvets&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;43468e1058ee6e0d280a45d493ceb014&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.71" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.71" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="semeru-11" nameIsGenerated="true">
       <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />

@@ -1,5 +1,6 @@
 package ru.netology.servlet;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import ru.netology.controller.PostController;
 import ru.netology.exception.NotFoundException;
 import ru.netology.repository.PostRepository;
@@ -10,19 +11,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class MainServlet extends HttpServlet {
-    private PostController controller;
+public class MainServlet  extends  HttpServlet{
+    AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("ru.netology");
 
+    private PostController controller;
     @Override
     public void init() {
-        final var repository = new PostRepository();
-        final var service = new PostService(repository);
-        controller = new PostController(service);
+        controller = context.getBean("postController", PostController.class);
     }
 
-    @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) {
-        // если деплоились в root context, то достаточно этого
+
         try {
             final var path = req.getRequestURI();
             final var method = req.getMethod();
@@ -62,7 +61,7 @@ public class MainServlet extends HttpServlet {
     }
 
     private void deletePost(String path, HttpServletResponse resp) {
-        try {
+        try{
             final var id = parseId(path);
             controller.removeById(id, resp);
         } catch (NotFoundException e){
@@ -72,9 +71,10 @@ public class MainServlet extends HttpServlet {
     }
 
     private void getPost(String path, HttpServletResponse resp) throws IOException {
-        try {
+        try{
             final var id = parseId(path);
             controller.getById(id, resp);
+            return;
         } catch (NotFoundException e){
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
         }
